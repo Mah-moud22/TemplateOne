@@ -41,6 +41,42 @@ a {
 .col-8 {
     width: 66.66667%;
 }
+.services .container , 
+.portfolio .container,
+.about .container,
+.contact .container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.section-title {
+    font-size: 100px;
+    color: var(--heading-color);
+    margin-bottom: 0;
+}
+.section-desc {
+    margin-top: -30px;
+    color: #797979;
+}
+@media (max-width : 768px){
+    .section-title {
+        font-size: 70px;
+    }
+    .section-desc {
+        padding-left: 10px;
+    }
+    .row-mid {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .col-mid {
+        width: 100%;
+        padding: 0 10px;
+    }
+}
 /* Small Screen */
 @media (min-width : 768px){
     .container {
@@ -178,8 +214,8 @@ section.landing {
 /* Start Features */
 section.features {
     background-color: #f6f6f6;
-    padding: 50px 0;
-    margin-top: 30px;
+    padding-top: 140px;
+    padding-bottom: 50px;
 }
 section.features .container{
     display: flex;
@@ -199,30 +235,20 @@ section.features .container{
     color: #777;
     line-height: 1.8;
 }
-.features .featur {
-    transition: all 5s;
-}
 .features .feature:hover {
     transform: scale(1.2,1.2);
     box-shadow: 0 0.3px 0 0 gray;
 }
-.services .container , 
-.portfolio .container,
-.about .container,
-.contact .container{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-.section-title {
-    font-size: 100px;
-    color: var(--heading-color);
-    margin-bottom: 0;
-}
-.section-desc {
-    margin-top: -30px;
-    color: #797979;
+@media (max-width : 768px){
+    section.features .container{
+        flex-direction: column;
+    }
+    .features .feature:not(:last-child) {
+        margin-bottom: 40px;
+    }
+    .features .feature:hover {
+        transform: none;
+    }
 }
 /* End Features */
 
@@ -257,6 +283,11 @@ section.features .container{
 .service-title h3{
     margin-left: 10px;
 }
+@media (max-width : 768px){
+    .services .image-container {
+        display: none;
+    }
+}
 /* End Services */
 
 /* Start Portfolio */
@@ -284,6 +315,9 @@ section.features .container{
     width: 80%;
     color: #777;
     line-height: 1.7;
+}
+@media (max-width : 768px){
+    
 }
 /* End Portfolio */
 
@@ -334,6 +368,21 @@ hr {
     width: 40%;
     border-color: var(--main-color);
 }
+@media (max-width : 1200px){
+    .about .image-container {
+        display: none;
+    }
+    .about .image-container~div {
+        width: 100%;
+        padding: 0 10px;
+    }
+}
+@media (max-width : 768px){
+    .about p{
+        font-size: 18px;
+        line-height: 1.5 !important;
+    }
+}
 /* End About */
 
 /* Start Contact */
@@ -371,6 +420,17 @@ hr {
 }
 .contact .social a:nth-of-type(1) i{
     color: blue;
+}
+@media (max-width : 768px){
+    .contact a {
+        font-size: 25px;
+    }
+    .contact {
+        padding: 0 10px;
+    }
+    .contact .label {
+        font-size: 30px;
+    }
 }
 /* End Contact */
 
